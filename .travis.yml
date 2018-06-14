@@ -5,3 +5,13 @@ php:
 script:
   - ls -l
 
+jobs:
+  include:
+    - stage: prepare
+      script: echo prepare
+    - stage: test phpcs
+      script: echo phpcs
+      if: branch = master
+    - stage: something different
+      script: echo something different
+      if: branch = foobar
