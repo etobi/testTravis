@@ -1,3 +1,4 @@
+conditions: v1
 language: php
 php:
   - 7.1
@@ -16,12 +17,13 @@ jobs:
       script: echo something different
       if: branch = foobar
     - stage: deploy to dev
+      if: commit_message =~ ^Merge pull request.*
+      branches:
+        only:
+          develop 
       script:
       - >
         echo;
         echo "Starting deployment to DEV";
         echo;
-      if: commit_message =~ ^Merge pull request.*
-      branches:
-        only:
-          develop 
+      
