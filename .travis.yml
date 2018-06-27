@@ -15,3 +15,13 @@ jobs:
     - stage: something different
       script: echo something different
       if: branch = foobar
+    - stage: deploy to dev
+      script:
+      - >
+        echo;
+        echo "Starting deployment to DEV";
+        echo;
+      if: commit_message =~ ^Merge pull request.*
+      branches:
+        only:
+          develop 
