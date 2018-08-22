@@ -33,5 +33,4 @@ env:
               chromeOptions:
                 args:
                   - no-sandbox
-
-
+  foobar:

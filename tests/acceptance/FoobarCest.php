@@ -15,6 +15,7 @@ class FoobarCest
      * @param \AcceptanceTester $I
      *
      * @env stage-standard
+     * @env foobar
      */
     public function standardTest(\AcceptanceTester $I)
     {
