@@ -1,0 +1,36 @@
+actor: AcceptanceTester
+modules:
+    enabled:
+        - \Helper\Acceptance
+        - \Helper\Configuration
+env:
+  stage-standard:
+    modules:
+      enabled:
+        - PhpBrowser:
+            url: https://www.example.com/
+  stage-interact:
+    modules:
+      enabled:
+        - WebDriver:
+            url: https://www.example.com/
+      config:
+        WebDriver:
+            browser: chrome
+            host: localhost
+            port: 4444
+            window_size: 1900x1200
+            # Accept self signed ssl certificates
+            acceptInsecureCerts: true
+            log_js_errors: true
+            # Timeout for opening a connection to remote selenium server
+            connection_timeout: 30
+            # Timeout to wait for a page load to complete
+            pageload_timeout: 60
+            # Timeout for a request to return from remote selenium server
+            request_timeout: 30
+            wait: 30
+            capabilities:
+              useAutomationExtension : false,
+              args:
+                ['disable-infobars', 'headless', 'disable-gpu', 'disable-dev-shm-usage']

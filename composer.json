@@ -1,0 +1,23 @@
+{
+  "repositories": [
+  ],
+  "name": "etobi/testTravis",
+  "description": "",
+  "config": {
+    "vendor-dir": "./vendor",
+    "bin-dir": "./vendor/bin",
+    "sort-packages": false
+  },
+  "require": {
+    "codeception/codeception": "^2.3.8",
+    "se/selenium-server-standalone": "^3.8.1"
+  },
+  "require-dev": {
+  },
+  "scripts": {
+  },
+  "extra": {
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
