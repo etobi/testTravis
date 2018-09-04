@@ -16,12 +16,13 @@ stages:
     if: branch = master
 
 jobs:
+  allow_failures:
+    - script: ./vendor/bin/codecept run --env stage-interact
   include:
     - stage: run codeception
       script:
-      - >
-          ./vendor/bin/codecept run --env stage-standard;
-          ./vendor/bin/codecept run --env stage-interact;
+        - ./vendor/bin/codecept run --env stage-standard
+        - ./vendor/bin/codecept run --env stage-interact
       before_script:
         - "export DISPLAY=:99.0"
         - "sh -e /etc/init.d/xvfb start"
