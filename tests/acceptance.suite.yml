@@ -14,8 +14,6 @@ env:
       enabled:
         - WebDriver:
             url: https://www.example.com/
-        - WebDriver:
-            url: https://fielmann-ds:BrillenStyle321!@de.stage.fielmann.com/
             browser: chrome
             # selenium host/port
             host: localhost
