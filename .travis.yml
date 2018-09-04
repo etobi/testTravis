@@ -37,4 +37,4 @@ jobs:
 
         # - echo "Run selenium server - background process"
         # - nohup bash -c "java -Dwebdriver.chrome.driver=./chromedriver -jar selenium-server-standalone.jar &" && sleep 1
-        - bash -c "./chromedriver &" && sleep 2
+        - bash -c "./chromedriver --port=39515 &" && sleep 2
