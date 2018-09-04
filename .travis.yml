@@ -32,8 +32,9 @@ jobs:
         - wget -c -nc --retry-connrefused --tries=0 http://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip -O chromedriver_linux64.zip
         - unzip -o -q chromedriver_linux64.zip
 
-        - echo "Download selenium-server-standalone jar file"
-        - wget -c -nc --retry-connrefused --tries=0 https://goo.gl/s4o9Vx -O selenium-server-standalone.jar
+        # - echo "Download selenium-server-standalone jar file"
+        # - wget -c -nc --retry-connrefused --tries=0 https://goo.gl/s4o9Vx -O selenium-server-standalone.jar
 
-        - echo "Run selenium server - background process"
-        - nohup bash -c "java -Dwebdriver.chrome.driver=./chromedriver -jar selenium-server-standalone.jar &" && sleep 1
+        # - echo "Run selenium server - background process"
+        # - nohup bash -c "java -Dwebdriver.chrome.driver=./chromedriver -jar selenium-server-standalone.jar &" && sleep 1
+        - bash -c "./chromedriver &" && sleep 2
