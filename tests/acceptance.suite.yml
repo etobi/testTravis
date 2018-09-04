@@ -16,7 +16,7 @@ env:
             url: https://www.example.com/
             browser: chrome
             # selenium host/port
-            port: 9515
+            port: 9222
             window_size: false
             # Accept self signed ssl certificates
             acceptInsecureCerts: true
