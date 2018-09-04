@@ -14,22 +14,27 @@ env:
       enabled:
         - WebDriver:
             url: https://www.example.com/
+        - WebDriver:
+            url: https://fielmann-ds:BrillenStyle321!@de.stage.fielmann.com/
             browser: chrome
             # selenium host/port
-            port: 9222
-            window_size: false
+            host: localhost
+            port: 4444
             # Accept self signed ssl certificates
             acceptInsecureCerts: true
             log_js_errors: true
             # Timeout for opening a connection to remote selenium server
-            connection_timeout: 30
+            connection_timeout: 60
             # Timeout to wait for a page load to complete
             pageload_timeout: 60
             # Timeout for a request to return from remote selenium server
-            request_timeout: 30
+            request_timeout: 60
+            # Whenever element is required and is not on page, wait for n seconds to find it before fail
             wait: 30
             capabilities:
               chromeOptions:
                 args:
                   - no-sandbox
+                  - disable-gpu
+                  - window-size=1900x1200
   foobar:
