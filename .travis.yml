@@ -10,14 +10,18 @@ sudo: required
 addons:
   chrome: stable
 
-before_install:
-  - if [ "$TRAVIS_PULL_REQUEST" != "false" ] ; then php -f commentGithubPullrequest.php; fi
+
+stages:
+  - name: comment pr
+    if: type = pull_request AND branch = master
 
 jobs:
   include:
-    - stage: prepare
+    - stage: comment pr
+      before_install:
+        - if [ "$TRAVIS_PULL_REQUEST" != "false" ] ; then php -f commentGithubPullrequest.php; fi
       script: 
-        - echo prepare
+        - echo comment pr
       after_script:
         - env
         - echo $TRAVIS_TEST_RESULT
