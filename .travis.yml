@@ -11,7 +11,7 @@ addons:
   chrome: stable
 
 before_install:
-  - if [ "$TRAVIS_PULL_REQUEST" != "false" ] ; then php -f commentGithubPullrequest.php fi
+  - if [ "$TRAVIS_PULL_REQUEST" != "false" ] ; then php -f commentGithubPullrequest.php; fi
 
 jobs:
   include:
